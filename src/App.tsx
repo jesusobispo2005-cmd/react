@@ -6,9 +6,16 @@ const [variable, setVariable] = useState<string>("Jesus");
 const alumno = "pardo";
 const alumnos = ["pardo", "mario", "neuza", "melina"];
 const [contador, setContador] = useState<number>(0);
-  const handleVariable = () => {
+const [name, setName] = useState<string>("");
+  
+const handleVariable = () => {
     setVariable("Mario");
   }
+
+  const handleName =(e:any)=>{
+    setName(e.target.value);
+  }
+
   return (
     <>
     <p>{variable}</p>
@@ -23,10 +30,20 @@ const [contador, setContador] = useState<number>(0);
 
     <h2>Contador</h2>
     <p>{contador}</p>
+    <p>{contador}</p>
+    <p>{contador}</p>
     <button onClick={() => setContador(contador + 1)}>+1</button>
     <button onClick={() => setContador(0)}>Reset</button>
-    <p>{contador}</p>
-    <p>{contador}</p>
+
+
+
+    <h2>nombre: {name}</h2>
+    <input 
+    type="text"
+    value={name}
+    onChange={handleName}
+    placeholder='Escribe tu nombre'
+    />
     </>
   );
 }
